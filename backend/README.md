@@ -315,3 +315,23 @@ Este projeto é parte do desafio técnico do time de desenvolvimento.
 ---
 
 **Bom trabalho, time! Este é um projeto desafiador e uma ótima oportunidade para construirmos algo incrível juntos.** 🚀
+
+### 📄 Endpoint de Análise
+
+POST /api/analyze
+
+**Headers**: Autenticação JWT  
+**Body**:
+- file: PDF
+- result_data: JSON
+- metrics: JSON
+
+**Resposta**:
+```json
+{
+  "id": 1,
+  "filename": "curriculo.pdf",
+  "result_data": {...},
+  "metrics": {...},
+  "created_at": "2025-08-23T10:00:00"
+}
