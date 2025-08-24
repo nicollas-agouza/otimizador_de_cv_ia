@@ -11,3 +11,11 @@ from app.core.api import router as analysis_router
 app = FastAPI()
 
 app.include_router(analysis_router, prefix="/api", tags=["Analysis"])
+
+from fastapi import FastAPI
+from app.api import auth
+
+app = FastAPI()
+
+app.include_router(auth.router, prefix="/api", tags=["Auth"])
+

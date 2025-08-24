@@ -402,3 +402,129 @@ chore: tarefas de manutenção
 
 *Lembre-se: O objetivo é aprender e crescer como desenvolvedor full-stack. 
 Não tenha medo de experimentar e errar!*
+
+ADICÃO
+
+Sistema de Autenticação - Otimizador de CV IA
+🚀 Instalação e Configuração
+Pré-requisitos
+
+Node.js 18+
+npm ou yarn
+Backend FastAPI rodando
+
+1. Instalar dependências
+bashcd frontend
+npm install
+# ou
+yarn install
+2. Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do frontend:
+envREACT_APP_API_URL=http://localhost:8000
+REACT_APP_ENVIRONMENT=development
+3. Configurar Tailwind CSS
+Crie o arquivo tailwind.config.js:
+javascript/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8'
+        }
+      }
+    },
+  },
+  plugins: [],
+}
+Crie o arquivo postcss.config.js:
+javascriptexport default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+4. CSS Global (src/index.css)
+css@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Customizações globais */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+}
+5. Executar o projeto
+bashnpm run dev
+# ou
+yarn dev
+📁 Estrutura de Arquivos
+frontend/src/
+├── components/
+│   ├── auth/
+│   │   ├── LoginForm.jsx
+│   │   ├── RegisterForm.jsx
+│   │   ├── ForgotPasswordForm.jsx
+│   │   ├── AuthLayout.jsx
+│   │   └── index.js
+│   └── common/
+│       ├── Input.jsx
+│       ├── Button.jsx
+│       ├── ProtectedRoute.jsx
+│       ├── PublicRoute.jsx
+│       ├── ErrorBoundary.jsx
+│       └── index.js
+├── context/
+│   └── AuthContext.jsx
+├── hooks/
+│   ├── useForm.js
+│   ├── useValidation.js
+│   └── index.js
+├── pages/
+│   └── auth/
+│       ├── LoginPage.jsx
+│       ├── RegisterPage.jsx
+│       ├── ForgotPasswordPage.jsx
+│       └── index.js
+├── utils/
+│   ├── api.js
+│   ├── validators.js
+│   ├── auth.js
+│   ├── storage.js
+│   ├── format.js
+│   └── index.js
+├── App.jsx
+├── main.jsx
+└── index.css
+🔧 Funcionalidades Implementadas
+✅ Componentes de Autenticação
+
+ LoginForm: Formulário de login com validação
+ RegisterForm: Cadastro com indicador de força da senha
+ ForgotPasswordForm: Recuperação de senha com timer
+ AuthLayout: Layout responsivo para páginas de auth
+
+✅ Componentes Reutilizáveis
+
+ Input: Campo de entrada com validação e ícones
+ Button: Botão com variants e estados de loading
+ ProtectedRoute: Proteção de rotas autenticadas
+ PublicRoute: Ro
